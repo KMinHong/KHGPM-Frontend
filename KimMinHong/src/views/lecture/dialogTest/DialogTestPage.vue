@@ -48,6 +48,7 @@
 </template>
 
 <script>
+
 export default {
     name: "DialogTestPage",
     data () {
@@ -70,7 +71,9 @@ export default {
         }
     }
 }
+
 </script>
 
 <style>
+
 </style>
