@@ -19,4 +19,5 @@ export default {
     [REQUEST_PRODUCT_TO_SPRING] (state, passingData) {
         state.product = passingData
     }
+    
 }
