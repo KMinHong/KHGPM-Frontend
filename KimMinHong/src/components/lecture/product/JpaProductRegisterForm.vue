@@ -2,9 +2,9 @@
   <form @submit.prevent="onSubmit">
     <table>
       <tr>
-        <td>제목</td>
+        <td>상품명</td>
         <td>
-          <input type="text" v-model="title"/>
+          <input type="text" v-model="productName"/>
         </td>
       </tr>
       <tr>
@@ -20,60 +20,77 @@
         </td>
       </tr>
       <tr>
-        <td>이미지를 등록하세요</td>
-        <td>
-          <input type="file" accept="image/*" @change="onFileChange"/>
-          <img :src="imagePreview" v-if="imagePreview"/>
-        </td>
-      </tr>
-      <tr>
         <td>가격</td>
         <td>
           <input type="number" v-model="price"/>
         </td>
       </tr>
+      <tr>
+        <td>사진 추가</td>
+        <td>
+          <input type="file" id="files" ref="files"
+            multiple @change="handleFileUpload"/>
+        </td>
+      </tr>
     </table>
-  
+
     <div>
       <button type="submit">등록</button>
-      <router-link to="{ name: 'JpaBoardListPage' }">
+      <router-link :to="{ name: 'JpaProductListPage' }">
         취소
       </router-link>
     </div>
-
   </form>
 </template>
+
 <script>
+
 export default {
     name: "JpaBoardRegisterForm",
     data () {
         return {
-            title: '제목을 입력하세요.',
+            productName: '상품명을 입력하세요.',
             writer: '누구세요 ?',
             content: '내용을 입력하세요.',
-            file: null,
             price: 0,
-        }
-    },
-    computed: {
-        imagePreview() {
-            if (this.file) {
-                return URL.createObjectURL(this.file)
-            }
-            return null
+            files: '',
         }
     },
     methods: {
         onSubmit () {
-            const { title, writer, content, file, price } = this
-            this.$emit('submit', { title, writer, content, file, price })
+            let formData = new FormData()
+
+            for (let idx = 0; idx < this.files.length; idx++) {
+                formData.append('imageFileList', this.files[idx])
+            }
+
+            const { productName, writer, content, price } = this
+            let productInfo = {
+                productName: productName,
+                writer: writer,
+                content: content,
+                price: price,
+            }
+
+            console.log('productInfo: ' + JSON.stringify(productInfo))
+
+            formData.append(
+                "productInfo",
+                new Blob([JSON.stringify(productInfo)], { type: "application/json" })
+            )
+
+            console.log('formData: ' + JSON.stringify(formData))
+
+            this.$emit('submit', formData)
         },
-        onFileChange (event) {
-            const file = event.target.files[0]
-            this.file = file
-        }
+        handleFileUpload () {
+            this.files = this.$refs.files.files
+        },
     }
 }
+
 </script>
+
 <style>
+
 </style>

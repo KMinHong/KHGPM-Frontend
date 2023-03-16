@@ -6,7 +6,7 @@
         <p v-else>로딩중 ........</p>
       </div>
     </v-container>
-  </template>
+</template>
   
   <script>
   import JpaBoardModifyForm from '@/components/lecture/board/JpaBoardModifyForm.vue'

@@ -13,7 +13,9 @@
 </template>
 
 <script>
+
 import axios from 'axios'
+
 export default {
     name: "FileUploadPage",
     data () {
@@ -27,19 +29,23 @@ export default {
         },
         submitFiles () {
             let formData = new FormData()
+
             let fileinfo = {
                 price: 50000,
                 test: "test",
             }
+
             // 사진
             for (let idx = 0; idx < this.files.length; idx++) {
-                formData.append('fileList', this.files[idx])
+                formData.append('imageFileList', this.files[idx])
             }
+
             // 글자
             formData.append(
                 "info",
                 new Blob([JSON.stringify(fileinfo)], { type: "application/json" })
             )
+
             axios.post('http://localhost:7777/file/uploadImgsWithText', formData)
                 .then (res => {
                     alert('처리 결과: ' + res.data)
@@ -53,4 +59,5 @@ export default {
 </script>
 
 <style>
+
 </style>
