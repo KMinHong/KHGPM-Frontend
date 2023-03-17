@@ -28,6 +28,7 @@
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
     "vue-cli-plugin-vuetify": "~2.5.8",
+    "vue-cookies": "^1.8.3",
     "vue-template-compiler": "^2.6.14",
     "vuetify-loader": "^1.7.0"
   },
@@ -51,9 +52,5 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ],
-  "_id": "frontend@0.1.0",
-  "readme": "ERROR: No README data found!"
+  ]
 }
-
-
