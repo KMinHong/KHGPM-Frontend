@@ -33,9 +33,9 @@
         </tr>
       </table>
     </div>
-  </template>
+</template>
   
-  <script>
+ <script>
   export default {
       name: "JpaBoardRead",
       props: {

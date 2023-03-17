@@ -6,7 +6,7 @@
         <p v-else>로딩중 ........</p>
       </div>
     </v-container>
-  </template>
+</template>
   
   <script>
   import JpaProductModifyForm from '@/components/lecture/product/JpaProductModifyForm.vue'

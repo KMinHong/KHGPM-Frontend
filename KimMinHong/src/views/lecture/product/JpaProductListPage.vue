@@ -6,7 +6,7 @@
       </router-link>
       <jpa-product-list :products="products"/>
     </v-container>
-  </template>
+</template>
   
   <script>
   import JpaProductList from '@/components/lecture/product/JpaProductList.vue'

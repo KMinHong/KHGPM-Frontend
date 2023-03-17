@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h3>게시물 목록</h3>
+      <h3>상품 목록</h3>
       <table>
         <tr>
           <th align="center" width="100">No</th>
@@ -10,7 +10,7 @@
         </tr>
         <tr v-if="!products || (Array.isArray(products) && products.length === 0)">
           <td colspan="4">
-              현재 등록된 게시물이 없습니다!
+              현재 등록된 상품이 없습니다!
           </td>
         </tr>
         <tr v-else v-for="product in products" :key="product.productId">
