@@ -10,7 +10,7 @@ import SearchMemberPasswordPage from "@/views/account/member/SearchMemberPasswor
 
 import AgreementPage from "@/views/information/AgreementPage.vue"
 import CompanyPage from "@/views/information/CompanyPage.vue"
-import CustomorCenterPage from "@/views/information/CustomorCenterPage"
+import InformationUsePage from "@/views/information/InformationUsePage.vue"
 import PrivacyPolicyPage from "@/views/information/PrivacyPolicyPage"
 
 

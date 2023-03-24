@@ -10,8 +10,8 @@
           개인정보처리방침
         </router-link>
         |
-        <router-link style="text-decoration: none; color: black;" :to="{ name: 'CustomorCenterPage' }">
-          고객센터
+        <router-link style="text-decoration: none; color: black;" :to="{ name: 'InformationUsePage' }">
+          이용안내
         </router-link>
         |
         <router-link style="text-decoration: none; color: black;" :to="{ name: 'CompanyPage' }">
